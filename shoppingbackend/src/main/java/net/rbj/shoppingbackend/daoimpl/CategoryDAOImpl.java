@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+
 import net.rbj.shoppingbackend.dao.CategoryDAO;
 import net.rbj.shoppingbackend.dto.Category;
 
@@ -50,6 +51,22 @@ public class CategoryDAOImpl implements CategoryDAO {
 	public List<Category> list() {
 		// TODO Auto-generated method stub
 		return categories;
+	}
+
+	@Override
+	public Category get(int id) {
+		// enchanced for loop
+		
+		for (Category category: categories){
+			
+			if(category.getId() == id) return category;
+		}
+		
+		return null;
+		
+		
+		
+		
 	}
 
 }
